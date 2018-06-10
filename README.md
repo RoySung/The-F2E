@@ -1,6 +1,4 @@
-# the-f2e
-
-> Nuxt.js project
+# The F2E
 
 ## Build Setup
 
@@ -19,4 +17,6 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+## Topics
+
+  1. [Todo List](https://thef2e-roysung.netlify.com/todolist)
