@@ -53,4 +53,8 @@ html {
 a.btn {
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
 </style>
