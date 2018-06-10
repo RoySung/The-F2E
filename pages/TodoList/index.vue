@@ -130,7 +130,9 @@
       },
       cancelChange(index) {
         if (this.sortedList[index].isNew) {
-          this.sortedList.shift()
+          const list = [...this.sortedList]
+          list.shift()
+          this.sortedList = list
         } else {
           this.sortedList[index] = this.backupItem
           this.backupItem = null
