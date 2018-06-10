@@ -1,0 +1,20 @@
+{
+  "name": "the-f2e",
+  "description": "Nuxt.js project",
+  "main": "",
+  "authors": [
+    "Roy Cai <roysunghan@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^5.0.13"
+  }
+}

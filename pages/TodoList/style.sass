@@ -1,0 +1,166 @@
+.todolist-page
+  width: 100vw
+  .header
+    width: 100%
+    height: 76px
+    background: #4A90E2
+    .tabs
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 100%
+      height: 100%
+      font-size: 24px
+      color: #00408B
+      .tab
+        display: flex
+        justify-content: center
+        align-items: center
+        flex: 1
+        height: 100%
+        label
+          display: flex
+          height: 100%
+          align-items: center
+          padding: 0px 20px
+        &.active label
+          color: #fff
+          border-bottom: 5px solid #00408B
+
+  .content
+    width: 60%
+    padding: 0 20%
+    margin: 0
+    box-sizing: content-box
+    height: calc(100vh-76px)
+    background: #E1E1E1
+    overflow: auto
+    .add-task-btn
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      padding: 0 25px
+      width: 100%
+      height: 65px
+      margin: 20px 0
+      color: #C8C8C8
+      background: #fff
+      border: 2px solid #C8C8C8
+      border-radius: 5px
+      cursor: pointer
+      font-size: 24px
+      .fa-plus
+        margin-right: 25px
+    .list
+      &__wrap
+        width: 100%
+        display: flex
+      &__item
+        display: flex
+        flex-direction: column
+        background: #F2F2F2
+        width: 100%
+        .title-wrap
+          display: flex
+          justify-content: space-between
+          width: 100%
+          padding: 25px
+          border-radius: 5px
+          .btn-content
+            .top-btn
+              &--active
+                margin-right: 20px
+                color: #F5A623
+          .name-wrap
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            font-size: 24px
+            width: 70%
+            .name-input
+              flex: 1
+              font-size: 24px
+            .checkbox-input
+              position: relative
+              width: 24px
+              height: 24px
+              cursor: pointer
+              margin-right: 10px
+              background: #fff
+              border-radius: 5px
+              .fa-check
+                position: absolute
+                left: 0
+                opacity: 0
+                font-size: 18px
+                color: #fff
+                width: 100%
+                height: 100%
+                line-height: 24px
+                text-align: center
+                border-radius: 5px
+                pointer-events: none
+              input[type=checkbox]
+                width: 100%
+                height: 100%
+                opacity: 0
+                &:checked + .fa-check
+                  background: #4A90E2
+                  opacity: 1
+              .edit-btn
+                &--active
+                  color: #4A90E2
+        .content-wrap
+          width: 100%
+          height: 0px
+          border-top: 3px solid #C8C8C8
+          transition: all .5s ease-out
+          overflow: hidden
+          &--editing
+            height: 360px
+            box-shadow: 1px 7px 2px 0px #0003
+          &__content
+            height: calc(100% - 60px)
+            border: 1px solid transparent
+            .form-wrap
+              margin: 30px 60px
+              .field
+                display: flex
+                flex-direction: column
+                margin-bottom: 5px
+                label
+                  margin-left: -20px
+                  margin-bottom: 10px
+                .far
+                  margin-right: 10px
+              .deadline-field
+                .date-picker
+                  max-width: 170px
+                  height: 35px
+                  border: unset
+                  border-radius: 5px
+                  box-shadow: unset
+                  padding: 5px
+              .comment-field
+                textarea
+                  height: 105px
+                  border-color: transparent
+                  border-radius: 5px
+          &__bottom-wrap
+            display: flex
+            height: 60px
+            .bottom-btn
+              display: flex
+              justify-content: center
+              align-items: center
+              width: 50%
+            .cancel-btn
+              background: #fff
+              color: #D0021B
+            .confirm-btn
+              background: #4A90E2
+              color: #fff
+
+
+
+
