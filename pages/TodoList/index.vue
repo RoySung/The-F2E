@@ -1,5 +1,5 @@
 <template>
-  <div class="todolist-page">
+  <div v-if="list" class="todolist-page">
     <div class="header">
       <div class="tabs">
         <div :class="{ active: isTasksState }" class="tab" @click="changeTasksState"><label>My Tasks</label></div>
@@ -52,6 +52,8 @@
 <script>
   import { Datetime } from 'vue-datetime';
 
+  // localstorage key
+  const TODOLIST = 'todolist'
   // state
   const TASKS = 'tasks'
   const INPROGRESS = 'in progress'
@@ -61,44 +63,25 @@
     data() {
       return {
         state: TASKS,
-        list: [
-          {
-            title: 'The F2E - Todo list',
-            deadline: '2018-06-11T12:00+08:00',
-            comment: 'finish it before 6/11 12:00am.',
-            isNew: false,
-            isTop: false,
-            isCompleted: false,
-          },
-          {
-            title: 'The F2E - Second Topic',
-            deadline: '2018-06-18T12:00+08:00',
-            comment: 'finish it before 6/18 12:00am.',
-            isNew: false,
-            isTop: false,
-            isCompleted: false
-          },
-          {
-            title: 'The F2E - Third Topic',
-            deadline: '2018-06-18T12:00+08:00',
-            comment: 'finish it before 6/18 12:00am.',
-            isNew: false,
-            isTop: false,
-            isCompleted: false
-          }
-        ],
+        list: [],
         backupItem: null,
         editingIndex: null
       }
     },
     computed: {
-      sortedList() {
-        const list = [...this.list]
-        const sortedList = list.sort((a, b) => b.isTop - a.isTop)
-        if (this.isCompletedState) {
-          return sortedList.filter(item => item.isCompleted)
-        } else {
-          return sortedList
+      sortedList: {
+        get() {
+          if (!this.list.length) return []
+          const list = [...this.list]
+          const sortedList = list.sort((a, b) => b.isTop - a.isTop)
+          if (this.isCompletedState) {
+            return sortedList.filter(item => item.isCompleted)
+          } else {
+            return sortedList
+          }
+        },
+        set(list) {
+          this.list = list
         }
       },
       editingItem() {
@@ -112,6 +95,14 @@
       },
       isCompletedState() {
         return this.state == COMPLETED
+      }
+    },
+    watch: {
+      sortedList: {
+        handler(list) {
+          window.localStorage.setItem(TODOLIST, JSON.stringify(list))
+        },
+        deep: true
       }
     },
     methods: {
@@ -156,9 +147,16 @@
           isTop: false,
           isCompleted: false
         }
-        this.sortedList.unshift(item)
+        const list = [...this.sortedList]
+        list.unshift(item)
+        this.sortedList = list
         this.editingIndex = 0
       }
+    },
+    mounted() {
+      let list = window.localStorage.getItem(TODOLIST)
+      list = list ? JSON.parse(list) : []
+      this.list = list
     },
     components: {
       Datetime
