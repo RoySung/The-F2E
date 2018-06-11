@@ -12,7 +12,7 @@
       <div class="list__wrap">
         <div class="list__item" v-for="(item, index) in sortedList" :key="`item-${index}`">
           <div class="title-wrap">
-            <div class="name-wrap">
+            <div class="name-wrap" @click="handleEditing(index)">
               <div class="checkbox-input">
                 <input v-model="item.isCompleted" type="checkbox">
                 <i class="fa fa-check" aria-hidden="true"></i>
