@@ -23,8 +23,8 @@
 </template>
 
 <script>
-  import Tags from './Tags'
-  import { stages, tags } from './constants'
+  import Tags from '~/components/Tags'
+  import { stages, tags } from '~/constants/filter'
 
   export default {
     name: 'Filter',
