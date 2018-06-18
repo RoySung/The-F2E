@@ -23,7 +23,8 @@
     font-size: 4rem
   width: 100vw
   height: 100vh
-  background: radial-gradient(#71fbfd, #fff)
+  // background: radial-gradient(#71fbfd, #fff)
+  background: #e6f8f9
   .content
     position: absolute
     top: 90px
@@ -111,6 +112,23 @@
         cursor: unset
         &:hover
           border: 2px solid transparent
+.loading-wrap
+  position: absolute
+  height: 100%
+  width: 100%
+  .loading-mask
+    position: fixed
+    width: 100%
+    left: 0
+    height: 100%
+    background: #e6f8fa8a
+  .loading
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    color: #53588a
+
 
 
 

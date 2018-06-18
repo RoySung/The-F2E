@@ -9,6 +9,12 @@
       <div id="search-btn" @click="search">Search</div>
     </div>
     <div v-if="isSearched" class="content">
+      <div v-if="isLoading" class="loading-wrap">
+        <div class="loading-mask"></div>
+        <div class="loading">
+          <i class="fa fa-5x fa-spinner fa-pulse"></i>
+        </div>
+      </div>
       <Tags class="stages-wrap" title="Stages" :options="stages" v-model="selectedStage"></Tags>
       <Tags class="tags-wrap" title="Tags" :options="tags" v-model="selectedTags"></Tags>
     </div>
@@ -29,14 +35,27 @@
         stages,
         tags,
         selectedStage: [],
-        selectedTags: []
+        selectedTags: [],
+        codeList: null,
+        isLoading: false
       }
     },
     methods: {
+      init() {
+        this.isLoading = true
+        fetch('https://www.thef2e.com/api/codeList')
+          .then(res => res.json())
+          .then(result => {
+            this.codeList = result
+            this.isLoading = false
+          })
+      },
       search() {
-        console.log('search')
         this.isSearched = true
+        this.init()
       }
+    },
+    mounted() {
     },
     components: {
       Tags
