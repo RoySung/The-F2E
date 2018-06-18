@@ -1,0 +1,135 @@
+@keyframes bigger
+  0%
+    color: transparent
+  20%
+    position: absolute
+    width: 110%
+  60%
+    position: absolute
+    top: 0
+    left: -5%
+  100%
+    position: absolute
+    top: 0
+    left: -5%
+    width: 110%
+    height: 100%
+    color: transparent
+
+.filter-page
+  h1
+    font-family: 'Teko', sans-serif
+    color: #fff
+    font-size: 4rem
+  width: 100vw
+  height: 100vh
+  // background: radial-gradient(#71fbfd, #fff)
+  background: #e6f8f9
+  .content
+    position: absolute
+    top: 90px
+    width: 60%
+    margin: 0 20%
+    padding: 20px
+    height: calc(100vh - 90px)
+  .search-wrap
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    width: 50%
+    transition: all 1s ease-in-out
+    .search-title
+      text-shadow: 3px 5px #9E9E9E
+    .search-input-wrap
+      display: flex
+      box-shadow: 0px 4px 10px 0px #777575
+      background: #fff
+      width: 100%
+      border-radius: 10px
+      transition: all 1s ease-in
+      .search-input
+        font-family: 'Teko', sans-serif
+        line-height: 34px
+        width: calc(100% - 40px)
+        margin: 10px 20px
+        border: none
+        font-size: 20px
+        outline: unset
+      .fa-search
+        font-size: 2rem
+        display: flex
+        align-items: center
+        justify-content: center
+        margin: 0 15px
+        color: #53588a
+        cursor: pointer
+    #search-btn
+      font-family: 'Teko', sans-serif
+      display: block
+      width: 100px
+      height: 40px
+      margin: 20px auto
+      border: unset
+      border-radius: 35px
+      font-size: 25px
+      font-weight: bolder
+      text-align: center
+      color: #fff
+      background: #53588a
+      cursor: pointer
+      // box-shadow: inset 0px -7px 4px 0px #0a0e38a6
+      box-sizing: border-box
+      border: 2px solid transparent
+      &:hover
+        // background: #163664
+        // box-shadow: inset -1px -4px 10px 0px #0a0e38a6
+        // transform: rotatex(30deg)
+        // padding-top: 5px
+        border: 2px solid #fff
+    &--searched
+      top: 0
+      left: 0
+      transform: unset
+      width: 100%
+      height: 90px
+      flex-direction: row
+      padding: 0 5%
+      .search-title
+        z-index: 1
+      .search-input-wrap
+        z-index: 1
+        width: 30%
+      #search-btn
+        animation: bigger 1s normal forwards ease
+        left: -5%
+        height: 100%
+        margin: 0
+        cursor: unset
+        &:hover
+          border: 2px solid transparent
+.loading-wrap
+  position: absolute
+  height: 100%
+  width: 100%
+  .loading-mask
+    position: fixed
+    width: 100%
+    left: 0
+    height: 100%
+    background: #e6f8fa8a
+  .loading
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    color: #53588a
+
+
+
+
+
