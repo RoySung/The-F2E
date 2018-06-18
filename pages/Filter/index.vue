@@ -15,8 +15,8 @@
           <i class="fa fa-5x fa-spinner fa-pulse"></i>
         </div>
       </div>
-      <Tags class="stages-wrap" title="Stages" :options="stages" v-model="selectedStage"></Tags>
-      <Tags class="tags-wrap" title="Tags" :options="tags" v-model="selectedTags"></Tags>
+      <Tags class="stages-wrap" isToggler="true" title="Stages" :options="stages" v-model="selectedStage"></Tags>
+      <Tags class="tags-wrap" isToggler="true" title="Tags" :options="tags" v-model="selectedTags"></Tags>
       <h3 v-if="filtedResult" class="result-count" v-html="resultCountText" ></h3>
       <List v-if="filtedResult" :listArr="filtedResult"></List>
     </div>
@@ -85,7 +85,7 @@
     methods: {
       fetchDataWithStage(stage) {
         return new Promise((resolve, reject) => {
-          window.fetch(`https://www.thef2e.com/api/codeList?stage=${stage}`)
+          fetch(`https://www.thef2e.com/api/codeList?stage=${stage}`)
             .then(res => res.json())
             .then(result => {
               resolve(result)
