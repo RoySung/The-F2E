@@ -1,3 +1,5 @@
+@import '~@/styles/mixins/breakpoints'
+
 @keyframes bigger
   0%
     color: transparent
@@ -11,8 +13,8 @@
   100%
     position: absolute
     top: 0
-    left: -5%
-    width: 110%
+    left: -10%
+    width: 120%
     height: 100%
     color: transparent
 
@@ -31,7 +33,9 @@
     width: 100%
     padding: 20px 20%
     height: calc(100vh - 90px)
-    overflow: auto;
+    overflow: auto
+    @include breakpoint(mobile)
+      padding: 20px 5%
   .search-wrap
     position: absolute
     top: 50%
