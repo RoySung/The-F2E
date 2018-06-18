@@ -120,10 +120,14 @@
       &__tags-wrap
         h2
           font-size: 1.2rem
-        .tag
-          font-size: 1rem
-          min-width: 50px
-          padding: 0 5px
+        .tags-wrap
+          flex-direction: row
+          .tags
+            padding: 0
+            .tag
+              font-size: 1rem
+              min-width: 50px
+              padding: 0 5px
 
   .pages-wrap
     text-align: center
