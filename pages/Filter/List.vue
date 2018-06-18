@@ -1,7 +1,7 @@
 <template>
   <ul class="list-wrap">
     <li
-      v-for="(item, index) in listArr"
+      v-for="(item, index) in listArrWithPage"
       :key="`item-${index}-${item.timeStamp}`"
       class="list-item"
     >
@@ -23,6 +23,15 @@
         </li>
       </ul>
     </li>
+    <div class="pages-wrap">
+      <button class="pages-btn prev-btn" @click="prevPage">
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+      </button>
+      <span class="pages-text" v-html="`${page} / ${lastPage}`"></span>
+      <button class="pages-btn next-btn" @click="nextPage">
+        <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+      </button>
+    </div>
   </ul>
 </template>
 
@@ -37,22 +46,50 @@
     data() {
       return {
         stages,
+        limitCount: 10
       }
     },
     computed: {
       page: {
         get() {
-          return this.$route.query.page
+          let page = this.$route.query.page
+          page = this.checkPage(page)
+          return page
         },
         set(page) {
           let query = Object.assign({}, this.$route.query)
+          page = this.checkPage(page)
           query.page = page
           this.$router.push({ query })
         }
+      },
+      lastPage() {
+        return Math.ceil(this.listArr.length / this.limitCount)
+      },
+      listArrWithPage() {
+        const { limitCount, page, listArr } = this
+        const start = limitCount * (page - 1)
+        const end = start +  limitCount
+        return listArr.slice(start, end)
+      }
+    },
+    methods: {
+      checkPage(page) {
+        return page = page > this.lastPage ? this.lastPage : page < 1 ? 1 : page
+      },
+      prevPage() {
+        let page = this.page - 1
+        page = page < 1 ? 1 : page
+        this.page = page
+      },
+      nextPage() {
+        let page = this.page + 1
+        page = page > this.lastPage ? this.lastPage : page
+        this.page = page
       }
     },
     mounted() {
-      this.page = 1
+      if (!this.page) this.page = 1
     },
     components: {
       Tags
@@ -87,5 +124,17 @@
           font-size: 1rem
           min-width: 50px
           padding: 0 5px
+
+  .pages-wrap
+    text-align: center
+    font-size: 1.5rem
+    .pages-btn
+      border: unset
+      background: transparent
+      font-size: 1.3rem
+      color: #53588a
+      outline: unset
+      cursor: pointer
+    .pages-text
 
 </style>
