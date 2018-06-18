@@ -8,19 +8,20 @@
       </div>
       <div id="search-btn" @click="search">Search</div>
     </div>
-    <div v-if="isSearched" class="content">
-      <div v-if="isLoading" class="loading-wrap">
-        <div class="loading-mask"></div>
-        <div class="loading">
-          <i class="fa fa-5x fa-spinner fa-pulse"></i>
+    <transition name="fade">
+      <div v-if="isSearched" class="content">
+        <div v-if="isLoading" class="loading-wrap">
+          <div class="loading-mask"></div>
+          <div class="loading">
+            <i class="fa fa-5x fa-spinner fa-pulse"></i>
+          </div>
         </div>
+        <Tags class="stages-wrap" isToggler="true" title="Stages" :options="stages" v-model="selectedStage"></Tags>
+        <Tags class="tags-wrap" isToggler="true" title="Tags" :options="tags" v-model="selectedTags"></Tags>
+        <h3 v-if="filtedResult" class="result-count" v-html="resultCountText" ></h3>
+        <List v-if="filtedResult" :listArr="filtedResult"></List>
       </div>
-      <Tags class="stages-wrap" isToggler="true" title="Stages" :options="stages" v-model="selectedStage"></Tags>
-      <Tags class="tags-wrap" isToggler="true" title="Tags" :options="tags" v-model="selectedTags"></Tags>
-      <h3 v-if="filtedResult" class="result-count" v-html="resultCountText" ></h3>
-      <List v-if="filtedResult" :listArr="filtedResult"></List>
-    </div>
-
+    </transition>
   </div>
 </template>
 
