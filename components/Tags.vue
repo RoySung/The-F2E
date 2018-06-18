@@ -4,11 +4,11 @@
     <ul class="tags">
       <li
         class="tag"
-        :class="{ 'tag--active': value.includes(option) }"
-        v-for="(option, index) in options"
+        :class="{ 'tag--active': value && value.includes(option), 'tag--disabled': !value }"
+        v-for="(option, index) in optionsWithObject"
         :key="`option-${option.value}`"
         v-html="option.name"
-        @click="selectTag(index)"
+        @click="value && selectTag(index)"
       >
       </li>
     </ul>
@@ -22,6 +22,20 @@
       title: String,
       options: Array,
       value: Array
+    },
+    computed: {
+      optionsWithObject() {
+        return this.options.map(option => {
+          if (Object.keys(option).includes('name') && Object.keys(option).includes('value')) {
+            return option
+          } else {
+            return {
+              name: option,
+              value: option
+            }
+          }
+        })
+      }
     },
     methods: {
       selectTag(optionIndex) {
@@ -46,7 +60,10 @@
   font-family: 'Teko', sans-serif
   color: #53588a
   .tags
+    display: flex
+    flex-wrap: wrap
     font-size: 1.2rem
+    padding: 0 10px
     .tag
       display: block
       min-width: 100px
@@ -63,5 +80,7 @@
       &--active
         color: #fff
         background: #53588a
+      &--disabled
+        cursor: unset
 
 </style>
