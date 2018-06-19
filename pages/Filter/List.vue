@@ -98,6 +98,8 @@
 </script>
 
 <style lang="sass">
+@import '~@/styles/mixins/breakpoints'
+
 .list-wrap
   font-family: 'Teko', sans-serif
   color: #53588a
@@ -108,6 +110,8 @@
     border-radius: 20px
     padding: 20px
     margin-top: 20px
+    ul
+      padding-left: 10px
     .item
       &__link-wrap,
       &__stage-wrap,
@@ -117,6 +121,8 @@
         font-size: 1.2rem
         i
           margin-right: 10px
+      &__link-wrap
+        overflow: auto
       &__tags-wrap
         h2
           font-size: 1.2rem
