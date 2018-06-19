@@ -8,7 +8,7 @@
       <ul>
         <li class="item__link-wrap">
           <i class="fa fa-link" aria-hidden="true"></i>
-          <a class="demo-link" target="black" :href="item.url" v-html="item.url"></a>
+          <a class="demo-link" target="_blank" :href="item.url" v-html="item.url"></a>
         </li>
         <li class="item__stage-wrap">
           <i class="fa fa-list-ol" aria-hidden="true"></i>
