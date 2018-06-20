@@ -26,6 +26,7 @@
 </template>
 
 <script>
+  import fetch from 'node-fetch'
   import Tags from '~/components/Tags'
   import List from './List'
   import { stages, tags } from '~/constants/filter'

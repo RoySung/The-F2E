@@ -41,7 +41,10 @@
   export default {
     name: "FilterList",
     props: {
-      listArr: Array
+      listArr: {
+        type: Array,
+        default: () => []
+      }
     },
     data() {
       return {
