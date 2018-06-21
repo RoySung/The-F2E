@@ -1,0 +1,44 @@
+@mixin flex-center
+  display: flex
+  justify-content: center
+  align-items: center
+
+.header
+  font-family: HelveticaNeue-Bold
+  display: flex
+  position: relative
+  width: 100%
+  height: 70px
+  background: #000
+  color: #fff
+  padding: 0 30px
+  &__logo-wrap
+    padding-right: 60px
+    .logo-text
+      @include flex-center
+      height: 100%
+      font-size: 24px
+  &__navigation-bar
+    font-size: 16px
+    .navigation-tabs
+      display: flex
+      height: 100%
+      .tab
+        @include flex-center
+        padding: 10px
+        text-transform: uppercase
+        transition: all .3s ease
+        box-sizing: border-box
+        color: #919ba4
+        &:hover
+          color: #ffffff
+          border-bottom: 4px solid #fff
+  &__user-wrap
+    @include flex-center
+    position: absolute
+    right: 0
+    height: 100%
+    padding: 30px
+    font-size: 16px
+    text-transform: uppercase
+
