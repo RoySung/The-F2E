@@ -1,10 +1,4 @@
-@mixin flex-center
-  display: flex
-  justify-content: center
-  align-items: center
-
-@import './header.sass'
-
+@import '~@/styles/mixins/flex-center'
 // debug
 // *
 //   outline: 1px solid blue
@@ -68,30 +62,5 @@
       color: #4A90E2
   .analytics-chart
     grid-area: analytics
-  .transaction-website
-    grid-area: transaction
-    &__item
-      justify-content: space-between
-      padding: 23px
-      *
-        @include flex-center
-        &:not(:last-child)
-          margin-right: 20px
-      &__img
-        margin-right: 20px
-        i
-          font-size: 45px
-      &__name
-        font-size: 16px
-        color: #9B9B9B
-        flex: 1
-      &__count
-      &__percent
-        &.green
-          color: #7ED321
-        &.red
-          color: #D0021B
-        i
-          margin-right: 5px
   .latest-orders
     grid-area: orders
