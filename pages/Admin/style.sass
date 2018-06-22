@@ -13,7 +13,17 @@
   background: #ffffff
   border-radius: 3px
   box-shadow: 0 0 10px 5px #EBEBEB
+  padding: 30px 40px
 
+.list-wrap
+  &__title
+    font-size: 24px
+    margin-bottom: 30px
+  &__list
+    padding: 0
+  &__item
+    display: flex
+    border-bottom: 1px solid #EBEBEB
 
 .admin-page
   background: #F2F2F2
@@ -24,7 +34,7 @@
   width: 100%
   padding: 30px 42px
   grid-template-columns: repeat(6, 1fr)
-  grid-template-rows: 1fr 140px 1fr 1fr
+  grid-template-rows: 30px 140px 400px 1fr
   grid-template-areas: "title . . . . filter" "revenue revenue cost cost net net" "analytics analytics analytics analytics analytics analytics" "transaction transaction transaction orders orders orders"
   grid-gap: 20px
   .title-wrap
@@ -60,5 +70,28 @@
     grid-area: analytics
   .transaction-website
     grid-area: transaction
+    &__item
+      justify-content: space-between
+      padding: 23px
+      *
+        @include flex-center
+        &:not(:last-child)
+          margin-right: 20px
+      &__img
+        margin-right: 20px
+        i
+          font-size: 45px
+      &__name
+        font-size: 16px
+        color: #9B9B9B
+        flex: 1
+      &__count
+      &__percent
+        &.green
+          color: #7ED321
+        &.red
+          color: #D0021B
+        i
+          margin-right: 5px
   .latest-orders
     grid-area: orders
