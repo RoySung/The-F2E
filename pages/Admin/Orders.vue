@@ -21,7 +21,7 @@
         </div>
         <div class="orders__item__count">
           <p class="count-prefix">Total</p>
-          <p class="count-number" v-html="order.price"></p>
+          <p class="count-number" v-html="order.price.toLocaleString()"></p>
         </div>
       </li>
     </ul>

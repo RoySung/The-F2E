@@ -2,48 +2,19 @@
   <div class="card list-wrap transaction-website">
     <h4 class="list-wrap__title">Transaction Website</h4>
     <ul class="list-wrap__list transaction-website__list">
-      <li class="list-wrap__item transaction-website__item">
+      <li
+        v-for="item in list"
+        :key="item.url"
+        class="list-wrap__item transaction-website__item">
         <div class="transaction-website__item__img">
-          <i class="fab fa-facebook"></i>
+          <i :class="getIconClass(item.platform)"></i>
         </div>
-        <div class="transaction-website__item__name">Facebook.com</div>
-        <div class="transaction-website__item__count">45,836</div>
-        <div class="transaction-website__item__percent green">
-          <i class="fas fa-arrow-up"></i>
-          20%
-        </div>
-      </li>
-      <li class="list-wrap__item transaction-website__item">
-        <div class="transaction-website__item__img">
-          <i class="fab fa-google"></i>
-        </div>
-        <div class="transaction-website__item__name">google.com</div>
-        <div class="transaction-website__item__count">23,582</div>
-        <div class="transaction-website__item__percent green">
-          <i class="fas fa-arrow-up"></i>
-          12%
-        </div>
-      </li>
-      <li class="list-wrap__item transaction-website__item">
-        <div class="transaction-website__item__img">
-          <i class="fas fa-shopping-bag"></i>
-        </div>
-        <div class="transaction-website__item__name">Shopify.com</div>
-        <div class="transaction-website__item__count">2,489</div>
-        <div class="transaction-website__item__percent red">
-          <i class="fas fa-arrow-down"></i>
-          15%
-        </div>
-      </li>
-      <li class="list-wrap__item transaction-website__item">
-        <div class="transaction-website__item__img">
-          <i class="fab fa-wordpress"></i>
-        </div>
-        <div class="transaction-website__item__name">Wordpress.com</div>
-        <div class="transaction-website__item__count">1,057</div>
-        <div class="transaction-website__item__percent red">
-          <i class="fas fa-arrow-down"></i>
-          30%
+        <div class="transaction-website__item__name" v-html="item.url"></div>
+        <div class="transaction-website__item__count" v-html="item.total.toLocaleString()"></div>
+        <div :class="{ green: item.trend == 'up', red: item.trend == 'down' }" class="transaction-website__item__percent">
+          <i v-if="item.trend == 'up'" class="fas fa-arrow-up"></i>
+          <i v-if="item.trend == 'down'" class="fas fa-arrow-down"></i>
+          <span v-html="`${item.percent}%`"></span>
         </div>
       </li>
     </ul>
@@ -52,7 +23,27 @@
 
 <script>
   export default {
-    name: "TransactionWebsite"
+    name: "TransactionWebsite",
+    props: {
+      list: Array
+    },
+    mounted() {
+      console.log(this.list)
+    },
+    methods: {
+      getIconClass(platform) {
+        switch (platform) {
+          case 'Wordpress':
+            return 'fab fa-wordpress'
+          case 'Shopify':
+            return 'fas fa-shopping-bag'
+          case 'Google':
+            return 'fab fa-google'
+          case 'Facebook':
+            return 'fab fa-facebook'
+        }
+      }
+    }
   }
 </script>
 

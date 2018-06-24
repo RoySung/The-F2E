@@ -20,7 +20,7 @@
 
       <Chart></Chart>
 
-      <TransactionWebsite />
+      <TransactionWebsite :list="websiteList" />
       <Orders :orders="latestOrders" />
     </div>
   </div>
@@ -31,10 +31,41 @@
   import TransactionWebsite from './TransactionWebsite'
   import Orders from './Orders'
   import Chart from './Chart'
+
   export default {
     name: 'AdminPage',
     data() {
       return {
+        websiteList: [
+          {
+            platform: 'Facebook',
+            url: 'Facebook.com',
+            total: 45836,
+            trend: 'up',
+            percent: 20
+          },
+          {
+            platform: 'Google',
+            url: 'google.com',
+            total: 23582,
+            trend: 'up',
+            percent: 12
+          },
+          {
+            platform: 'Shopify',
+            url: 'Shopify.com',
+            total: 2489,
+            trend: 'down',
+            percent: 15
+          },
+          {
+            platform: 'Wordpress',
+            url: 'Wordpress.com',
+            total: 1057,
+            trend: 'down',
+            percent: 30
+          }
+        ],
         latestOrders: [
           {
             title: 'Vintage T-shirt',
