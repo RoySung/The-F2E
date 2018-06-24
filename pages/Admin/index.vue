@@ -18,7 +18,7 @@
         <div class="total-view__count">41,880</div>
       </div>
 
-      <div class="card analytics-chart">chart</div>
+      <Chart></Chart>
 
       <TransactionWebsite />
       <Orders :orders="latestOrders" />
@@ -30,6 +30,7 @@
   import Header from './Header'
   import TransactionWebsite from './TransactionWebsite'
   import Orders from './Orders'
+  import Chart from './Chart'
   export default {
     name: 'AdminPage',
     data() {
@@ -62,7 +63,8 @@
     components: {
       Header,
       TransactionWebsite,
-      Orders
+      Orders,
+      Chart
     }
   }
 </script>
