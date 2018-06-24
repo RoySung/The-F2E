@@ -1,0 +1,43 @@
+@import '~@/styles/mixins/flex-center'
+
+.latest-orders
+  .orders__list
+    .orders__item
+      position: relative
+      height: 120px
+      padding: 10px 0
+      &__img
+        width: 100px
+        height: 100px
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        margin-right: 20px
+      &__info
+        display: flex
+        flex-direction: column
+        .info-title
+          font-size: 20px
+          color: #000000
+        .info-time,
+        .info-customer
+          font-size: 16px
+          color: #9B9B9B
+          line-height: 24px
+          i
+            font-size: 10px
+            width: 20px
+            text-align: center
+      &__count
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        text-align: right
+        position: absolute
+        bottom: 10px
+        right: 0
+        .count-prefix
+          font-size: 14px
+        .count-number
+          font-size: 20px
+          font-weight: bolder

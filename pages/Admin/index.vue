@@ -21,8 +21,7 @@
       <div class="card analytics-chart">chart</div>
 
       <TransactionWebsite />
-
-      <div class="card latest-orders">orders</div>
+      <Orders :orders="latestOrders" />
     </div>
   </div>
 </template>
@@ -30,11 +29,40 @@
 <script>
   import Header from './Header'
   import TransactionWebsite from './TransactionWebsite'
+  import Orders from './Orders'
   export default {
     name: 'AdminPage',
+    data() {
+      return {
+        latestOrders: [
+          {
+            title: 'Vintage T-shirt',
+            imgSrc: 'https://pixabay.com/get/e837b20b2efc063ecd0b4606e248459ee66ae3d01bb8194491f2c47c.jpg',
+            time: '2018/6/13  13:42',
+            customer: 'Belle Willis',
+            price: 3200
+          },
+          {
+            title: 'Cowboy Jacket',
+            imgSrc: 'https://pixabay.com/get/e837b20b2efc063ecd0b4606e248459ee66ae3d01bb8194491f2c47c.jpg',
+            time: '2018/6/13  10:45',
+            customer: 'Adrian Cummings',
+            price: 2800
+          },
+          {
+            title: 'Coach Coat',
+            imgSrc: 'https://pixabay.com/get/e837b20b2efc063ecd0b4606e248459ee66ae3d01bb8194491f2c47c.jpg',
+            time: '2018/6/13  8:26',
+            customer: 'Lura Holland',
+            price: 1600
+          }
+        ]
+      }
+    },
     components: {
       Header,
-      TransactionWebsite
+      TransactionWebsite,
+      Orders
     }
   }
 </script>
