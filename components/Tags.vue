@@ -1,6 +1,6 @@
 <template>
   <div class="tags-wrap">
-    <h2 v-if="title" class="title">
+    <h2 v-if="title" class="tags-wrap__title">
       <span v-html="title"></span>
       <i
         v-if="isToggler"
@@ -76,7 +76,7 @@
   flex-direction: column
   font-family: 'Teko', sans-serif
   color: #53588a
-  .title
+  &__title
     display: flex
     i
       margin: auto 10px
