@@ -3,7 +3,7 @@
     <div :class="{ 'search-wrap--searched': isSearched }" class="search-wrap">
       <h1 class="search-title">The F2E</h1>
       <div class="search-input-wrap">
-        <input class="search-input" type="text" v-model="searchInputText" @keyup.enter="search" autofocus>
+        <input class="search-input" type="text" v-model="searchInputText" @keyup.enter="search" autofocus placeholder="Filter url with keyword ...">
         <i class="fas fa-search" @click="search"></i>
       </div>
       <div id="search-btn" @click="search">Search</div>
