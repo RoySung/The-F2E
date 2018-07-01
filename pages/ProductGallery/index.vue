@@ -1,6 +1,6 @@
 <template>
   <div class="product-gallery">
-    <div class="banner-wrap">banner</div>
+    <div class="banner-wrap"></div>
     <div class="content-wrap">
       <h2 class="content-wrap__title">VINTAGE DENIM</h2>
       <h3 class="content-wrap__subtitle">Kogi Cosby sweater ethical squid irony</h3>
@@ -17,8 +17,8 @@
     <div class="decorate-words__banner__left__bottom"><h2>06</h2></div>
 
     <div class="decorate-words__content"><h3>PRODUCT DETAILS</h3></div>
-    <div class="img-wrap__first">img1</div>
-    <div class="img-wrap__second">img2</div>
+    <div class="img-wrap__second"></div>
+    <div class="img-wrap__first"></div>
   </div>
 </template>
 
