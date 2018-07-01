@@ -1,7 +1,7 @@
 <template>
   <div class="product-gallery">
-    <div class="banner-wrap"></div>
-    <div class="content-wrap">
+    <div ref="banner" class="banner-wrap"></div>
+    <div ref="content" class="content-wrap">
       <h2 class="content-wrap__title">VINTAGE DENIM</h2>
       <h3 class="content-wrap__subtitle">Kogi Cosby sweater ethical squid irony</h3>
       <div class="content-wrap__content">
@@ -10,6 +10,12 @@
         <p>We must now retrace our way a little. It was mentioned that upon first breaking ground in the whale's back, the blubber-hook was inserted into the original hole there cut by the spades of the mates. But how did so clumsy and weighty a mass as that same hook get fixed in that hole? It was inserted there by my particular friend Queequeg, whose duty it was, as harpooneer.</p>
       </div>
     </div>
+
+    <div class="decorate-rect__first"></div>
+    <div class="decorate-rect__second"></div>
+    <div class="decorate-rect__third"></div>
+    <div class="decorate-rect__fourth"></div>
+    <div class="decorate-rect__fifth strip-bg"></div>
 
     <div class="decorate-words__banner__top__right"><h2>VINTAGE</h2></div>
     <div class="decorate-words__banner__right__top"><h2>DENIM</h2></div>
@@ -23,8 +29,16 @@
 </template>
 
 <script>
+  // import ScrollReveal from 'scrollreveal'
   export default {
-    name: "ProductGallery"
+    name: "ProductGallery",
+    mounted() {
+      this.$nextTick(() => {
+        const ScrollReveal = require('scrollreveal')
+        const sr = ScrollReveal({ reset: true })
+        sr.reveal(this.$refs.banner, { duration: 200 })
+      })
+    }
   }
 </script>
 

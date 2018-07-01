@@ -19,6 +19,7 @@
     "node-sass": "^4.9.0",
     "nuxt": "^1.0.0",
     "sass-loader": "^7.0.3",
+    "scrollreveal": "^3.4.0",
     "vue-datetime": "^1.0.0-beta.3",
     "weekstart": "^1.0.0"
   },
