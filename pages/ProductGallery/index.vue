@@ -1,7 +1,7 @@
 <template>
   <div class="product-gallery">
-    <div ref="banner" class="banner-wrap"></div>
-    <div ref="content" class="content-wrap">
+    <div class="scroll-reveal banner-wrap"></div>
+    <div class="scroll-reveal content-wrap">
       <h2 class="content-wrap__title">VINTAGE DENIM</h2>
       <h3 class="content-wrap__subtitle">Kogi Cosby sweater ethical squid irony</h3>
       <div class="content-wrap__content">
@@ -17,14 +17,14 @@
     <div class="decorate-rect__fourth"></div>
     <div class="decorate-rect__fifth strip-bg"></div>
 
-    <div class="decorate-words__banner__top__right"><h2>VINTAGE</h2></div>
-    <div class="decorate-words__banner__right__top"><h2>DENIM</h2></div>
-    <div class="decorate-words__banner__bottom__left"><h2>TOP</h2></div>
-    <div class="decorate-words__banner__left__bottom"><h2>06</h2></div>
+    <div class="scroll-reveal decorate-words__banner__top__right"><h2>VINTAGE</h2></div>
+    <div class="scroll-reveal decorate-words__banner__right__top"><h2>DENIM</h2></div>
+    <div class="scroll-reveal decorate-words__banner__bottom__left"><h2>TOP</h2></div>
+    <div class="scroll-reveal decorate-words__banner__left__bottom"><h2>06</h2></div>
 
-    <div class="decorate-words__content"><h3>PRODUCT DETAILS</h3></div>
-    <div class="img-wrap__second"></div>
-    <div class="img-wrap__first"></div>
+    <div class="scroll-reveal decorate-words__content"><h3>PRODUCT DETAILS</h3></div>
+    <div class="scroll-reveal img-wrap__second"></div>
+    <div class="scroll-reveal img-wrap__first"></div>
   </div>
 </template>
 
@@ -36,7 +36,7 @@
       this.$nextTick(() => {
         const ScrollReveal = require('scrollreveal')
         const sr = ScrollReveal({ reset: true })
-        sr.reveal(this.$refs.banner, { duration: 200 })
+        sr.reveal('.scroll-reveal', { duration: 800 }, 100)
       })
     }
   }
