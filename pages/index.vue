@@ -8,6 +8,7 @@
       <router-link to="/filter">2. Filter</router-link>
       <router-link to="/admin">3. Admin</router-link>
       <router-link to="/productgallery">4. Product Gallery</router-link>
+      <router-link to="/comicviewer">5. Comic Viewer</router-link>
     </div>
   </section>
 </template>
