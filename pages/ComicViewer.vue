@@ -12,10 +12,10 @@
           <h2>MY HEXSCHOOL</h2>
         </div>
         <ul class="info-wrap__content__info">
-          <li class="info-genres"><span>Genres</span>Fusce/vehicula/dolor</li>
-          <li class="info-author"><span>Author</span>Namae Shiranai</li>
-          <li class="info-status"><span>Status</span>Ongoing</li>
-          <li class="info-rate"><span>Rate</span></li>
+          <li class="info-field info-genres"><span>Genres</span>Fusce/vehicula/dolor</li>
+          <li class="info-field info-author"><span>Author</span>Namae Shiranai</li>
+          <li class="info-field info-status"><span>Status</span>Ongoing</li>
+          <li class="info-field info-rate"><span>Rate</span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></li>
           <li class="info-summary">
             <span>Summary</span>
             <p>If your banker breaks, you snap; if your apothecary by mistake sends you poison in your pills, you die.<br><br>Therefore, I say, I saw that this situation of mine was the precise situation of every mortal that has this Siamese connexion with a plurality of other mortals. </p>
