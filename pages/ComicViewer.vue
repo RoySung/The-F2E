@@ -32,6 +32,7 @@
         <p>Chapter 2: Todo List is Going Crazy! <span class="new-tag">New</span></p>
       </div>
     </div>
+    <nuxt-child />
   </div>
 </template>
 
@@ -41,5 +42,5 @@
   }
 </script>
 
-<style lang="sass" src="./style.sass" scoped>
+<style lang="sass" src="./ComicViewer/comicViewer.sass" scoped>
 </style>
