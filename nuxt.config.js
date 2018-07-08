@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -34,10 +36,27 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      }),
+    ],
+    vendor: ['jquery']
   },
+
   css: [
     '~/bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css',
     './node_modules/vue-datetime/dist/vue-datetime.css'
   ],
+
+  plugins: [
+    {
+      src: '~/plugins/vue-slick.js',
+      ssr: false
+    }
+  ]
 }
