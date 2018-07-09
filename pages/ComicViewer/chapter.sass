@@ -1,0 +1,92 @@
+$bg-bright-color: #F2F2F2
+$bg-dark-color: #000
+.reading-page
+  background: $bg-bright-color
+  // height: calc(100vh - 75px)
+  width: 100%
+  padding: 24px 20%
+  .selection-bar
+    display: flex
+    align-items: center
+    margin-bottom: 24px
+    &__name
+      font-weight: bold
+      i
+        margin: 0 5px
+    select
+      // -webkit-appearance: none
+      // -moz-appearance: none
+      // appearance: none
+      // width: 125px
+      // height: 35px
+      border: 2px solid #000
+      border-radius: 0
+      padding: 15px
+      &:last-of-type
+        border-left: 0px
+    &__toggle-wrap
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center
+      label
+        position: relative
+        background: #000
+        border: 2px solid #000
+        margin: 0 8px
+        &:before
+          content: ""
+          display: block
+          width: 50%
+          height: 100%
+          position: absolute
+          // right: 0
+          left: 0
+          background: #fff
+          transition: all .3s ease-in
+      #dark-theme-toggler
+        display: none
+        &:checked
+          & + label
+            border: 2px solid #fff
+            &:before
+              left: 100%
+              transform: translateX(-100%)
+      .toggler-dark
+        color: #fff
+  .content-wrap
+    .main-slider-wrap
+      position: relative
+      &__nav-wrap
+        position: absolute
+        top: 0
+        left: -50px
+        width: calc(100% + 100px)
+        height: 100%
+        display: flex
+        justify-content: space-between
+        .nav-btn
+          border: unset
+          width: 50px
+          background: transparent
+          outline: unset
+          z-index: 1
+          i
+            font-size: 43px
+          &:disabled
+            i
+              color: gray
+
+
+  &.dark-theme
+    background: $bg-dark-color
+    color: #fff
+    i
+      color: #fff
+
+
+.input-slider
+  display: inline-block
+  width: 50px
+  height: 26px
+
