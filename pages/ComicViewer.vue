@@ -56,5 +56,5 @@
   }
 </script>
 
-<style lang="sass" src="./ComicViewer/comicViewer.sass" scoped>
+<style lang="sass" src="./ComicViewer/index.sass" scoped>
 </style>
