@@ -1,0 +1,72 @@
+$blue: #0275D8
+$light-blue: #BEE1FF
+
+#validation-page
+  padding: 0 27.5%
+  hr
+    height: 8px
+    width: 100%
+    background: $blue
+    border: unset
+  /deep/ .el-input__inner:invalid
+    border-color: red
+  .steps-content
+    .title-wrap
+      padding: 24px
+      &__title
+        font-size: 48px
+        text-align: center
+      &__desc
+        font-size: 24px
+        text-align: center
+    .step-wrap
+      &__line
+        display: flex
+        &:not(:last-of-type)
+          margin-bottom: 24px
+        .input-wrap
+          flex: 1
+          &:not(:last-of-type)
+            margin-right: 20px
+          &__line
+            display: flex
+            &:not(:last-child)
+              margin-bottom: 24px
+            .el-input:not(:last-of-type)
+              margin-right: 20px
+          label
+            display: block
+            font-size: 20px
+            margin-bottom: 8px
+
+  .el-steps
+    padding: 0 30px
+    margin: 40px auto
+    /deep/ .el-step
+      &__icon
+        border-color: $light-blue
+      &__line
+        background-color: $light-blue
+      .circle-icon
+        width: 60%
+        height: 60%
+        border-radius: 100%
+        background-color: $blue
+      .is-wait
+        .circle-icon
+          border-radius: 100%
+          background-color: transparent
+      .is-process
+        *:not(.el-step__line)
+          border-color: $blue
+          border-radius: 100%
+      .is-success
+        *:not(.el-step__line)
+          color: #fff
+          border-color: $blue
+          background-color: $blue
+          border-radius: 100%
+  .next-step-btn
+    width: 100%
+    margin-top: 40px
+
