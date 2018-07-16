@@ -1,8 +1,14 @@
+@import '~@/styles/mixins/breakpoints'
+
 $blue: #0275D8
 $light-blue: #BEE1FF
 
 #validation-page
   padding: 0 27.5%
+  @include breakpoint(pad)
+    padding: 0 20%
+  @include breakpoint(mobile)
+    padding: 0 10%
   hr
     height: 8px
     width: 100%
@@ -68,5 +74,5 @@ $light-blue: #BEE1FF
           border-radius: 100%
   .next-step-btn
     width: 100%
-    margin-top: 40px
+    margin: 40px 0px
 
