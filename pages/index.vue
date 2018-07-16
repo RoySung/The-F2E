@@ -9,6 +9,7 @@
       <router-link to="/admin">3. Admin</router-link>
       <router-link to="/productgallery">4. Product Gallery</router-link>
       <router-link to="/comicviewer">5. Comic Viewer</router-link>
+      <router-link to="/validation">6. Validation</router-link>
     </div>
   </section>
 </template>
