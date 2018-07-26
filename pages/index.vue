@@ -10,6 +10,7 @@
       <router-link to="/productgallery">4. Product Gallery</router-link>
       <router-link to="/comicviewer">5. Comic Viewer</router-link>
       <router-link to="/validation">6. Validation</router-link>
+      <router-link to="/canvasgame">7. Canvas Game</router-link>
     </div>
   </section>
 </template>
