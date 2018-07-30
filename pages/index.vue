@@ -11,6 +11,7 @@
       <router-link to="/comicviewer">5. Comic Viewer</router-link>
       <router-link to="/validation">6. Validation</router-link>
       <router-link to="/canvasgame">7. Canvas Game</router-link>
+      <router-link to="/parallaxscroll">8. Parallax Scrolling</router-link>
     </div>
   </section>
 </template>
